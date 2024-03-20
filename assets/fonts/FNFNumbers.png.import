@@ -1,0 +1,22 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://cccusmixamhch"
+path="res://.godot/imported/FNFNumbers.png-deba55d4d677942f13fd595ce35dfa4d.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/FNFNumbers.png"
+dest_files=["res://.godot/imported/FNFNumbers.png-deba55d4d677942f13fd595ce35dfa4d.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("48-57")
+columns=5
+rows=2
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+fallbacks=[]
+compress=true
+scaling_mode=2

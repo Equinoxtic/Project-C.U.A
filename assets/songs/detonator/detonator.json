@@ -1,0 +1,288 @@
+{
+	"song": {
+	  "song": "detonator",
+	  "notes": [
+		{
+		  "sectionNotes": [
+			[
+			  342.85715,
+			  1.0,
+			  0.0
+			],
+			[
+			  1200.0,
+			  0.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": false,
+		  "bpm": 100.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  1628.5714,
+			  2.0,
+			  0.0
+			],
+			[
+			  2142.8572,
+			  1.0,
+			  0.0
+			],
+			[
+			  2314.2856,
+			  2.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": false,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  3085.7144,
+			  2.0,
+			  0.0
+			],
+			[
+			  3257.1428,
+			  0.0,
+			  0.0
+			],
+			[
+			  3514.2856,
+			  1.0,
+			  0.0
+			],
+			[
+			  3685.7144,
+			  2.0,
+			  0.0
+			],
+			[
+			  3857.143,
+			  1.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": false,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  4457.1426,
+			  0.0,
+			  0.0
+			],
+			[
+			  4542.857,
+			  0.0,
+			  0.0
+			],
+			[
+			  4628.5713,
+			  0.0,
+			  0.0
+			],
+			[
+			  4714.2856,
+			  0.0,
+			  0.0
+			],
+			[
+			  4800.0,
+			  0.0,
+			  0.0
+			],
+			[
+			  4885.7144,
+			  0.0,
+			  0.0
+			],
+			[
+			  4971.4287,
+			  0.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": false,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  5742.8574,
+			  1.0,
+			  0.0
+			],
+			[
+			  5828.5713,
+			  1.0,
+			  0.0
+			],
+			[
+			  6000.0,
+			  1.0,
+			  0.0
+			],
+			[
+			  6085.7144,
+			  1.0,
+			  0.0
+			],
+			[
+			  6342.8574,
+			  2.0,
+			  0.0
+			],
+			[
+			  6428.5713,
+			  2.0,
+			  0.0
+			],
+			[
+			  6514.2856,
+			  1.0,
+			  0.0
+			],
+			[
+			  6600.0,
+			  0.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": true,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  7285.7144,
+			  1.0,
+			  0.0
+			],
+			[
+			  7542.8574,
+			  3.0,
+			  0.0
+			],
+			[
+			  7628.572,
+			  2.0,
+			  0.0
+			],
+			[
+			  7714.286,
+			  2.0,
+			  0.0
+			],
+			[
+			  7800.0,
+			  1.0,
+			  0.0
+			],
+			[
+			  7885.7144,
+			  1.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": true,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  8571.429,
+			  2.0,
+			  0.0
+			],
+			[
+			  8657.143,
+			  2.0,
+			  0.0
+			],
+			[
+			  8828.571,
+			  1.0,
+			  0.0
+			],
+			[
+			  8914.285,
+			  1.0,
+			  0.0
+			],
+			[
+			  9085.714,
+			  1.0,
+			  0.0
+			],
+			[
+			  9257.143,
+			  1.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": true,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [
+			[
+			  10114.286,
+			  3.0,
+			  0.0
+			],
+			[
+			  10371.429,
+			  2.0,
+			  0.0
+			],
+			[
+			  10542.857,
+			  1.0,
+			  0.0
+			],
+			[
+			  10800.0,
+			  1.0,
+			  0.0
+			]
+		  ],
+		  "lengthInSteps": 16,
+		  "mustHitSection": true,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		},
+		{
+		  "sectionNotes": [],
+		  "lengthInSteps": 16,
+		  "mustHitSection": false,
+		  "bpm": 175.0,
+		  "changeBPM": false
+		}
+	  ],
+	  "bpm": 175.0,
+	  "needsVoices": true,
+	  "speed": 2.9,
+	  "player1": "bfaside",
+	  "player2": "whittyaside"
+	}
+  }

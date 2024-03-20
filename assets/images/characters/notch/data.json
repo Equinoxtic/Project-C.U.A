@@ -1,0 +1,44 @@
+{
+	"animationData": {
+		"idle": {
+			"animationOffsets": {
+				"X": 0,
+				"Y": 0
+			},
+			"reversed": false
+		},
+		"arrowLeft": {
+			"animationOffsets": {
+				"X": -40,
+				"Y": 18
+			},
+			"reversed": false
+		},
+		"arrowRight": {
+			"animationOffsets": {
+				"X": 35,
+				"Y": -3
+			},
+			"reversed": false
+		},
+		"arrowDown": {
+			"animationOffsets": {
+				"X": 8,
+				"Y": 32
+			},
+			"reversed": false
+		},
+		"arrowUp": {
+			"animationOffsets": {
+				"X": -10,
+				"Y": -33
+			},
+			"reversed": false
+		}
+	},
+	"cameraOffset": {
+		"X": -60,
+		"Y": -20
+	},
+	"healthBarColor": "663333"
+}
