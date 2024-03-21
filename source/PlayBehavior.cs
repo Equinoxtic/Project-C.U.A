@@ -481,34 +481,39 @@ public partial class PlayBehavior : MusicBeatBehavior
 	{
 		foreach (List<dynamic> data in strumData.ToArray())
 		{
-			if (data[0] - Conductor.songPosition < 1800 / SONG.song.speed)
+			float strumTime = data[0];
+			int noteData = (int)data[1] % 4;
+			float noteLength = data[2];
+			bool shouldHit = data[3];
+
+			if (strumTime - Conductor.songPosition < 1800 / SONG.song.speed)
 			{
 				Sprite2D note = notes.Get();
 				Note noteScript = (Note)note;
-				noteScript.strumTime = data[0];
-				noteScript.noteData = (int)data[1] % 4;
+				noteScript.strumTime = strumTime;
+				noteScript.noteData = noteData;
 				noteScript.isSustain = false;
 				noteScript.isSustainEnd = false;
-				noteScript.shouldHit = data[3];
+				noteScript.shouldHit = shouldHit;
 				activeNotes.Add(note);
 				if (!hudView.HasNode((string)note.Name))
 					hudView.AddChild(note);
 				noteScript.resetNote();
 
-				if (data[2] > 0)
+				if (noteLength > 0)
 				{
-					for (int k = 0; k < Mathf.FloorToInt(data[2] / Conductor.stepCrochet); k++)
+					for (int k = 0; k < Mathf.FloorToInt(noteLength / Conductor.stepCrochet); k++)
 					{
 						Sprite2D noteSus = notes.Get();
 						Note noteSusScript = (Note)noteSus;
-						noteSusScript.noteData = (int)data[1] % 4;
+						noteSusScript.noteData = noteData;
 						noteSusScript.isSustain = true;
-						noteSusScript.isSustainEnd = k == Mathf.FloorToInt(data[2] / Conductor.stepCrochet) - 1;
+						noteSusScript.isSustainEnd = k == Mathf.FloorToInt(noteLength / Conductor.stepCrochet) - 1;
 						if (noteSusScript.isSustainEnd)
-							noteSusScript.strumTime = data[0] + (Conductor.stepCrochet * k) + Conductor.stepCrochet * 0.655f;
+							noteSusScript.strumTime = strumTime + (Conductor.stepCrochet * k) + Conductor.stepCrochet * 0.655f;
 						else
-							noteSusScript.strumTime = data[0] + (Conductor.stepCrochet * k) + Conductor.stepCrochet;
-						noteSusScript.shouldHit = data[3];
+							noteSusScript.strumTime = strumTime + (Conductor.stepCrochet * k) + Conductor.stepCrochet;
+						noteSusScript.shouldHit = shouldHit;
 						activeNotes.Add(noteSus);
 						if (!hudView.HasNode((string)noteSus.Name))
 							hudView.AddChild(noteSus);
