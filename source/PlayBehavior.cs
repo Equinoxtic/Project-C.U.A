@@ -665,7 +665,7 @@ public partial class PlayBehavior : MusicBeatBehavior
     {
         base._Notification(what);
 
-		if (!paused)
+		if (!paused && songStarted)
 		{
 			switch (what)
 			{
