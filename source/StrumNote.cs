@@ -7,7 +7,7 @@ public partial class StrumNote : AnimatedSprite2D
 	string action;
 
 	[Export]
-	bool auto; //for opponent or botplay
+	public bool auto; //for opponent or botplay
 
 	Character characterToSing;
 

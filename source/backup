@@ -1,0 +1,91 @@
+foreach (Sprite2D note in activeNotes.ToArray())
+		{
+			Note noteScript = (Note)note;
+			float directionToGo = (Conductor.songPosition - noteScript.strumTime) * (0.45f * SONG.song.speed);
+			if (!settings.downScroll)
+				directionToGo = -directionToGo;
+
+			if (noteScript.shouldHit)
+			{
+				AnimatedSprite2D strumNote = strumNotes[noteScript.noteData];
+				StrumNote strumNoteScript = (StrumNote)strumNote;
+
+				if (settings.middleScroll)
+					note.Show();
+
+				note.Position = new Vector2(strumNote.Position.X,
+					strumNote.Position.Y + directionToGo);
+
+				if (!noteScript.isSustain || (noteScript.isSustain && noteScript.isSustainEnd))
+					note.Scale = new Vector2(strumNote.Scale.X, strumNote.Scale.Y);
+				else
+					note.Scale = new Vector2(strumNote.Scale.X, strumNote.Scale.Y * Conductor.stepCrochet / 100f * 1.48f * SONG.song.speed);
+
+				if (noteScript.strumTime < Conductor.songPosition + 160)
+				{
+					if (noteScript.strumTime > Conductor.songPosition - 200)
+					{
+						if (!noteScript.isSustain)
+						{
+							if (strumNoteScript.hitable == null)
+								strumNoteScript.hitable = note;
+						}
+						else
+						{
+							if (noteScript.strumTime < Conductor.songPosition + 10)
+							{
+								if (strumNoteScript.hitableSus == null)
+									strumNoteScript.hitableSus = note;
+							}
+						}
+					}
+					else
+					{
+						strumNoteScript.missNote();
+
+						if (!((Note)note).isSustain) strumNoteScript.hitable = null;
+						else strumNoteScript.hitableSus = null;
+						
+						PlayBehavior.instance.activeNotes.Remove(note);
+						PlayBehavior.instance.notes.Release(note);
+					}
+				}
+			}
+			else
+			{
+				AnimatedSprite2D strumNote = opponentStrumNotes[noteScript.noteData];
+				StrumNote opponentStrumNoteScript = (StrumNote)strumNote;
+
+				note.Position = new Vector2(strumNote.Position.X,
+					strumNote.Position.Y + directionToGo);
+
+				if (settings.middleScroll)
+					note.Hide();
+
+				if (!noteScript.isSustain || (noteScript.isSustain && noteScript.isSustainEnd))
+					note.Scale = new Vector2(strumNote.Scale.X, strumNote.Scale.Y);
+				else
+					note.Scale = new Vector2(strumNote.Scale.X,  strumNote.Scale.Y * Conductor.stepCrochet / 100f * 1.48f * SONG.song.speed);
+			
+
+				if (noteScript.strumTime < Conductor.songPosition + 160)
+				{
+					if (!noteScript.isSustain)
+					{
+						if (noteScript.strumTime < Conductor.songPosition)
+						{
+							if (opponentStrumNoteScript.hitable == null)
+								opponentStrumNoteScript.hitable = note;
+						}
+					}
+					else
+					{
+						if (noteScript.strumTime < Conductor.songPosition + 10)
+						{
+							if (opponentStrumNoteScript.hitableSus == null)
+								opponentStrumNoteScript.hitableSus = note;
+						}
+					}
+				}
+			}
+		}
