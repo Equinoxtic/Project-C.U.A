@@ -22,4 +22,4 @@
 - **me ([@SillyDilly1001](https://twitter.com/SillyDilly1001))**: Programmer.
 - **[@MrDeathWishFNF](https://twitter.com/MrDeathWishFNF)**: Concepts And Logo.
 
-_Check wiki for instructions_
+_No wiki yet, as the engine is unfinished._
