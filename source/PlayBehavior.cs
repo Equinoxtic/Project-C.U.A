@@ -28,6 +28,8 @@ public partial class PlayBehavior : MusicBeatBehavior
 
 	public AudioStreamPlayer inst;
 	public AudioStreamPlayer voices;
+
+	Label botplayLabel;
 	//
 	
 	// Chart Stuff
@@ -167,10 +169,11 @@ public partial class PlayBehavior : MusicBeatBehavior
 					switchPauseSelection(-1);
 				if (Input.IsActionJustPressed("uiAccept"))
 				{
-					GetTree().Paused = false;
 					switch (pauseOptions[curPausedSelection].Text)
 					{
 						case "RESUME":
+							GetTree().Paused = false;
+
 							paused = false;
 
 							pauseCam.Visible = false;
@@ -180,11 +183,26 @@ public partial class PlayBehavior : MusicBeatBehavior
 							break;
 						
 						case "RESTART":
+							GetTree().Paused = false;
+
 							switchState("GameSongs/" + SONG.song.song);
+								
+							break;
+
+						case "BOTPLAY":
+							foreach (AnimatedSprite2D strumNoteProtagonist in strumNotes)
+							{
+								StrumNote strumNoteScript = (StrumNote)strumNoteProtagonist;
+								strumNoteScript.auto = !strumNoteScript.auto;
+							}
+
+							botplayLabel.Visible = !botplayLabel.Visible;
 								
 							break;
 						
 						case "QUIT":
+							GetTree().Paused = false;
+
 							switchState("MainMenu");
 								
 							break;
@@ -389,7 +407,8 @@ public partial class PlayBehavior : MusicBeatBehavior
 		gameCamZoom = gameCam.Zoom;
 		hudCamZoom = hudCam.Zoom;
 		
-		scoreTxt = hudView.GetNode<Label>("InfoDisplay/Text");
+		scoreTxt = hudView.GetNode<Label>("ScoreLabel");
+		botplayLabel = hudView.GetNode<Label>("BotplayLabel");
 
 		ratingSpr = hudView.GetNode<Sprite2D>("Rating");
 		ratingSpr.Position = settings.ratingPos;

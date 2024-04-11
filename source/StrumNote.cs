@@ -20,8 +20,7 @@ public partial class StrumNote : AnimatedSprite2D
 	{
 		settings = GetNode<Settings>("/root/Settings");
 
-		if (auto)
-			AnimationFinished += () => Play("static");
+		AnimationFinished += () => {if (auto) Play("static");};
 	}
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
